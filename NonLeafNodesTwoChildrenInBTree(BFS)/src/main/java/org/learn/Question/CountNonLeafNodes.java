@@ -4,8 +4,8 @@ package org.learn.Question;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class CountNonLeafTwoChildren {
-	public static int countNonLeafTwoChildren(Node root) {
+public class CountNonLeafNodes {
+	public static int countNonLeafNodes(Node root) {
 		if (root == null) {
 			System.out.println("Tree is empty");
 			return -1;
@@ -16,10 +16,10 @@ public class CountNonLeafTwoChildren {
 
 		while (!queue.isEmpty()) {
 			Node node = queue.poll();
-			
-			if(node.left != null && node.right != null)	 {
-				nNonLeaves++;				
-			}			
+
+			if (node.left != null && node.right != null) {
+				nNonLeaves++;
+			}
 			if (node.left != null) {
 				queue.offer(node.left);
 			}
@@ -27,7 +27,7 @@ public class CountNonLeafTwoChildren {
 				queue.offer(node.right);
 			}
 		}
-		System.out.println("Non Leaf nodes having two children : " + nNonLeaves);
+		System.out.println("Number of non-leaf nodes : " + nNonLeaves);
 		return nNonLeaves;
 	}
 }
